@@ -1,12 +1,10 @@
 const express = require('express')
-const dotenv = require('dotenv')
 const bodyparser = require('body-parser')
 
-const { API_PREFIX } = require("./helpers/constants")
+import { API_PREFIX, DEFAULT_API_PORT } from "./helpers/constants"
+import { API_PORT } from "./helpers/config"
 
-const PORT = process.env.API_PORT || 9000
-
-dotenv.config()
+const PORT = API_PORT || DEFAULT_API_PORT
 
 const app = express();
 
