@@ -21,6 +21,5 @@ export function signUp(req:Request,res:Response){
          })
      }
     })
-
 }
 

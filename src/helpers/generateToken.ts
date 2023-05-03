@@ -11,6 +11,6 @@ const data =  {
 const signature = TOKEN_SECRET || "";
 const expiration = '6h';
 
-return jwt.sign({ data, }, signature, { expiresIn: expiration });
+return jwt.sign({ data, }, signature, { expiresIn: expiration, });
 
 }
