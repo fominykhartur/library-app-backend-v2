@@ -6,6 +6,7 @@ export function getCategories(req:Request,res:Response){
     pool.promise().execute('select * from categories')
     .then((result: any[]) => {
      console.log(result[0])
+     console.log(res.locals.userdata)
      return res.send(JSON.stringify(result[0]))
     })
 }

@@ -7,7 +7,7 @@ import {attachCurrentUser} from "../middlewares/attachCurrentUser"
 import {isAuth} from "../middlewares/isAuth"
 
 router.use("/books", isAuth, attachCurrentUser, router_books);
-router.use("/users", router_users);
+router.use("/users", isAuth, attachCurrentUser, router_users);
 router.use("/auth", router_auth)
 
 module.exports = router;

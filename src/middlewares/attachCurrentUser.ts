@@ -7,19 +7,11 @@ export function attachCurrentUser (req:Request, res:Response, next:NextFunction)
     const Token = req.headers.authorization?.split(" ")[1] || ""
     const decodedData = JSON.parse(JSON.stringify(decode(Token))) 
     console.log(decodedData)
+    res.locals.userdata = decodedData.data
+    console.log(res.locals.userdata)
 
     // pool.promise().execute("select user_id,username,email from users where username = ?", [decodedData.username])
-    // const decodedTokenData = req.body.tokenData;
-    // const userRecord = await UserModel.findOne({ _id: decodedTokenData._id })
-   
-    // //  req.currentUser = userRecord;
-   
-    // if(!userRecord) {
-    //   return res.status(401).end('User not found')
-    // } else {
-    //   return next();
-    // console.log(req)
-    // console.log(req.headers.authorization)
+
 
     next()
    }
