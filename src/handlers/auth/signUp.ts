@@ -12,9 +12,8 @@ export function signUp(req:Request,res:Response){
      }else{
          const hashedPassword = await argon2.hash(req.body.password)
      
-         pool.promise().execute('insert into users (username,password,email) values (?, ?, ?)', [req.body.username,
-                                                                                                 hashedPassword,
-                                                                                                 req.body.email])
+         pool.promise().execute('insert into users (username,password,email) values (?, ?, ?)', 
+                                [req.body.username, hashedPassword, req.body.email])
          .then((result: any) => {
              console.log(result)
              return res.send(JSON.stringify({"res":"new user registered"}))
