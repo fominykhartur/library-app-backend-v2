@@ -1,11 +1,11 @@
 import {Request, Response } from "express"
 import {pool} from "../../helpers/db"
 
-export function getUserBooks(req:Request,res:Response){
+export function getUserCategories(req:Request,res:Response){
     pool.promise()
-    .execute('select u.username,b.book_id,b.category_name,b.author_name,b.book_name,bs.status \
-              from library_db.book_status bs \
-              natural join library_db.books b, library_db.users u \
+    .execute('select distinct b.category_name\
+              from library_db.book_status bs\
+              natural join library_db.books b, library_db.users u\
               where bs.user_id = u.user_id and bs.book_id = b.book_id and u.user_id = ?', [req.body.id])
     .then((result: any[]) => {
      console.log(result[0])

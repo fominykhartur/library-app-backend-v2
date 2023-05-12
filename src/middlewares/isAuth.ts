@@ -4,7 +4,9 @@ import * as jwt from 'jsonwebtoken'
 
 export function isAuth(req:Request, res:Response, next:NextFunction) {
     console.log("middle test 0")
+    console.log(req)
     if (!(req.headers.authorization && req.headers.authorization?.split(" ")[0]==="Bearer")){
+       console.log({"status":"Not authorized"})
        return res.status(400).send({"status":"Not authorized"})
     } 
     const Secret = TOKEN_SECRET || ""

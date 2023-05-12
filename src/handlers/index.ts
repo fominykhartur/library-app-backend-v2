@@ -9,3 +9,5 @@ export {getUserList} from "./users/getUserList"
 export {getCategories} from "./books/getCategories"
 export {getBooks} from "./books/getBooks"
 export {getAuthors} from "./books/getAuthors"
+
+export {getUserCategories} from "./public/getUserCategories"

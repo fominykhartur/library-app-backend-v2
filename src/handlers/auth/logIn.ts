@@ -20,6 +20,7 @@ export async function logIn(req:Request,res:Response){
             email: result[0][0].email
         })
         return res.send(JSON.stringify({res:"succes",
+                                        id: result[0][0].user_id,
                                         name: result[0][0].username,
                                         jwt:jwt}))
      }else{

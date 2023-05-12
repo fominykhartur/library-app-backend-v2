@@ -1,12 +1,13 @@
 const express = require('express')
 const bodyparser = require('body-parser')
-
+const cors = require('cors')
 import { API_PREFIX, DEFAULT_API_PORT } from "./helpers/constants"
 import { API_PORT } from "./helpers/config"
 
 const PORT = API_PORT || DEFAULT_API_PORT
 
 const app = express();
+app.use(cors())
 
 app.use(bodyparser.json())
 app.response.sendStatus = function(statusCode: number, message = "Something went wrong :(") {
