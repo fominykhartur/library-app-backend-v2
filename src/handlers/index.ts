@@ -11,3 +11,4 @@ export {getBooks} from "./books/getBooks"
 export {getAuthors} from "./books/getAuthors"
 
 export {getUserCategories} from "./public/getUserCategories"
+export {getUsername} from "./public/getUsername"
