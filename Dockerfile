@@ -11,4 +11,4 @@ RUN npm i
 
 COPY ./src /var/node/src
 
-CMD [ "npm", "run", "start"]
+CMD [ "npm", "run", "start:dev"]
