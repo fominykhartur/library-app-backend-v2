@@ -4,11 +4,6 @@ import {pool} from "../../helpers/db"
 export function addNewBook(req:Request,res:Response){
     const bookData = req.body
     const userData = res.locals.userdata
-    console.log("___________________________")
-    console.log("добавление новой книги")
-    console.log(bookData)
-    console.log(userData)
-    console.log("___________________________")
     pool.getConnection(async (err,connection)=>{
         connection.query('SET AUTOCOMMIT=0;')
         connection.query('START TRANSACTION')
