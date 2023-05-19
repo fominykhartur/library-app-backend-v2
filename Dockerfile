@@ -11,6 +11,6 @@ RUN npm i
 
 COPY ./src /var/node/src
 
-RUN tsc
+RUN npx tsc
 
 CMD [ "npm", "run", "start:dev"]
