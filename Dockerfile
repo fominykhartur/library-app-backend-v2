@@ -10,6 +10,7 @@ COPY tsconfig.json tsconfig.json
 RUN npm i
 
 COPY ./src /var/node/src
-COPY ./dist /var/node/dist
+
+RUN tsc
 
 CMD [ "npm", "run", "start:dev"]
