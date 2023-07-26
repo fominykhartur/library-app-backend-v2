@@ -1,19 +1,18 @@
-import fetch from 'node-fetch';
+import fetch from "node-fetch";
 
-async function request(options: { type: any; url: any; body: any; headers: any; })
-{
-    const {
-        type,
-        url,
-        body,
-        headers,
-    } = options;
+async function request(options: {
+    type: any;
+    url: any;
+    body: any;
+    headers: any;
+}) {
+    const { type, url, body, headers } = options;
 
     const fetchOptions = {
         method: type,
         headers: headers,
-        body: JSON.stringify(body)
-    }
+        body: JSON.stringify(body),
+    };
 
     try {
         const response = await fetch(url, fetchOptions);
@@ -27,4 +26,4 @@ async function request(options: { type: any; url: any; body: any; headers: any; 
 
 module.exports = {
     request,
-}
+};

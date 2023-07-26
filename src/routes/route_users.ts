@@ -1,6 +1,6 @@
-export const router = require('express').Router()
+export const router = require("express").Router();
 
-import * as handlers from "../handlers"
+import * as handlers from "../handlers";
 
-router.post("/changeBookStatus", handlers.changeBookStatus)
-router.post("/addNewBook", handlers.addNewBook)
+router.post("/changeBookStatus", handlers.changeBookStatus);
+router.post("/addNewBook", handlers.addNewBook);

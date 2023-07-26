@@ -1,6 +1,6 @@
-import { start } from './app';
+import { start } from "./app";
 
 (async () => {
-    console.log("Starting service...")
+    console.log("Starting service...");
     await start();
 })();

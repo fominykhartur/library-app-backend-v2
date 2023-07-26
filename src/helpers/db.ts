@@ -1,6 +1,6 @@
 import { createPool } from "mysql2";
-import * as config from "../helpers/config"
-  
+import * as config from "../helpers/config";
+
 export const pool = createPool({
     host: config.db.host,
     port: config.db.port,
@@ -10,4 +10,4 @@ export const pool = createPool({
     connectionLimit: config.db.connectionLimit,
     waitForConnections: true,
     enableKeepAlive: true,
-})
+});
